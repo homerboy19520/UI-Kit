@@ -1,0 +1,454 @@
+<label class="drag-drop-label" for="true">
+  <input class="drag-drop-input" id="true" type="file" />
+  <div class="drag-drop">
+    <div class="drag-drop__box">
+      <svg
+        class="drag-drop__icon"
+        width="68"
+        height="68"
+        viewBox="0 0 68 68"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g opacity="0.3">
+          <path
+            d="M34 59.5C48.0833 59.5 59.5 48.0833 59.5 34C59.5 19.9167 48.0833 8.5 34 8.5C19.9167 8.5 8.5 19.9167 8.5 34C8.5 48.0833 19.9167 59.5 34 59.5Z"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 46.75V21.25"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 21.25L24.4375 30.8125"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 21.25L43.5625 30.8125"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </svg>
+      <h1 class="drag-drop__title">Add Files</h1>
+      <p class="drag-drop__text">Drag & Drop to upload or</p>
+    </div>
+  </div>
+</label>
+
+<label class="drag-drop-label" for="2">
+  <input class="drag-drop-input" id="2" type="file" />
+  <div class="drag-drop drag-drop_wrong">
+    <div class="drag-drop__box">
+      <svg
+        class="drag-drop__icon"
+        width="68"
+        height="68"
+        viewBox="0 0 68 68"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g opacity="0.3">
+          <path
+            d="M34 59.5C48.0833 59.5 59.5 48.0833 59.5 34C59.5 19.9167 48.0833 8.5 34 8.5C19.9167 8.5 8.5 19.9167 8.5 34C8.5 48.0833 19.9167 59.5 34 59.5Z"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 46.75V21.25"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 21.25L24.4375 30.8125"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M34 21.25L43.5625 30.8125"
+            stroke="#2C2C2C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+      </svg>
+      <h1 class="drag-drop__title">Something went wrong.</h1>
+      <p class="drag-drop__text">Please try again</p>
+    </div>
+  </div>
+</label>
+
+<div class="drag-drop drag-drop_download">
+  <div class="drag-drop__box">
+    <h1 class="drag-drop__title">
+      <span class="drag-drop__numbers">40</span>% uploaded
+    </h1>
+    <div class="drag-drop__loader">
+      <div class="drag-drop__loader-progress"></div>
+    </div>
+    <p class="drag-drop__text drag-drop__text_download">Please wait...</p>
+    <button class="drag-drop__button">Cansel</button>
+  </div>
+</div>
+
+<div class="drag-drop drag-drop_upload">
+  <div class="drag-drop__box">
+    <svg
+      class="drag-drop__svg"
+      id="svg1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <!-- Путь заполнения линии прогрессбара     -->
+      <circle
+        cx="60"
+        cy="60"
+        r="50"
+        fill="none"
+        stroke="#E0E0E0"
+        stroke-width="5"
+      />
+      <circle
+        class="drag-drop__circle"
+        cx="60"
+        cy="60"
+        r="50"
+        transform="rotate(-90 60 60)"
+        fill="none"
+        stroke-dashoffset="314"
+        stroke-dasharray="314"
+        stroke="#18A0FB"
+        stroke-width="5"
+      ></circle>
+      <text
+        id="count"
+        x="40%"
+        y="50%"
+        fill="#2c2c2c"
+        text-anchor="middle"
+        dy="10"
+      >
+        40
+      </text>
+      <text
+        id="count"
+        x="75%"
+        y="50%"
+        fill="#2c2c2c"
+        text-anchor="middle"
+        dy="10"
+      >
+        %
+      </text>
+    </svg>
+    <p class="drag-drop__text-upload">Uploading ...</p>
+    <button class="drag-drop__button drag-drop__button_upload">Cansel</button>
+  </div>
+</div>
+
+<div class="drag-drop drag-drop_uploads">
+  <div class="drag-drop__container">
+    <h1 class="drag-drop__title_uploads">Recent Uploads</h1>
+    <button class="drag-drop__button drag-drop__button_uploads">
+      Upload
+      <svg
+        class="drag-drop__svg-uploads"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z"
+          stroke="#2C2C2C"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 13.75V6.25"
+          stroke="#2C2C2C"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 6.25L7.1875 9.0625"
+          stroke="#2C2C2C"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10 6.25L12.8125 9.0625"
+          stroke="#2C2C2C"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+  <!-- FILES -->
+  <ul class="drag-drop__list">
+    <li class="drag-drop__item">
+      <div class="drag-drop__upload">
+        <div class="drag-drop__file">
+          <svg
+            class="drag-drop__icon drag-drop__icon_file"
+            width="24"
+            height="32"
+            viewBox="0 0 24 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 5C0.5 2.51472 2.51472 0.5 5 0.5H15.3112L18.892 3.65312L18.8926 3.65371L23.5 7.7254V27C23.5 29.4853 21.4853 31.5 19 31.5H5C2.51472 31.5 0.5 29.4853 0.5 27V5Z"
+              fill="white"
+              stroke="#E0E0E0"
+            />
+          </svg>
+          <div class="flex flex_column">
+            <h2 class="drag-drop__file-name">File Name.jpg</h2>
+            <span class="drag-drop__text drag-drop__text_uploads"
+              >23 mins ago</span
+            >
+          </div>
+          <button class="drag-drop__button-files">
+            <svg
+              class="drag-drop__icon"
+              width="6.67"
+              height="6.67"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.29289 0.29289C0.68342 -0.09763 1.31658 -0.09763 1.70711 0.29289L5 3.5858L8.2929 0.29289C8.6834 -0.09763 9.3166 -0.09763 9.7071 0.29289C10.0976 0.68342 10.0976 1.31658 9.7071 1.70711L6.4142 5L9.7071 8.2929C10.0976 8.6834 10.0976 9.3166 9.7071 9.7071C9.3166 10.0976 8.6834 10.0976 8.2929 9.7071L5 6.4142L1.70711 9.7071C1.31658 10.0976 0.68342 10.0976 0.29289 9.7071C-0.09763 9.3166 -0.09763 8.6834 0.29289 8.2929L3.5858 5L0.29289 1.70711C-0.09763 1.31658 -0.09763 0.68342 0.29289 0.29289Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="drag-drop__wrapper">
+          <div class="drag-drop__progress"></div>
+        </div>
+      </div>
+    </li>
+    <li class="drag-drop__item">
+      <div class="drag-drop__upload drag-drop__upload_done">
+        <div class="drag-drop__file">
+          <svg
+            class="drag-drop__icon drag-drop__icon_file"
+            width="24"
+            height="32"
+            viewBox="0 0 24 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 5C0.5 2.51472 2.51472 0.5 5 0.5H15.3112L18.892 3.65312L18.8926 3.65371L23.5 7.7254V27C23.5 29.4853 21.4853 31.5 19 31.5H5C2.51472 31.5 0.5 29.4853 0.5 27V5Z"
+              fill="white"
+              stroke="#E0E0E0"
+            />
+          </svg>
+          <div class="flex flex_column">
+            <h2 class="drag-drop__file-name">File Name.jpg</h2>
+            <span class="drag-drop__text drag-drop__text_uploads"
+              >23 mins ago</span
+            >
+          </div>
+          <button class="drag-drop__button-files">
+            <svg
+              class="drag-drop__icon"
+              width="14"
+              height="8"
+              viewBox="0 0 13 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.193895 4.28276L0 4L0.193895 3.71724C0.278575 3.59374 0.434623 3.3882 0.657882 3.12773C1.02669 2.69745 1.45395 2.26774 1.93617 1.86589C3.33102 0.703511 4.89885 0 6.60626 0C8.31367 0 9.8815 0.703511 11.2764 1.86589C11.7586 2.26774 12.1858 2.69745 12.5546 3.12773C12.7779 3.3882 12.9339 3.59374 13.0186 3.71724L13.2125 4L13.0186 4.28276C12.9339 4.40626 12.7779 4.6118 12.5546 4.87227C12.1858 5.30255 11.7586 5.73226 11.2764 6.13411C9.8815 7.29649 8.31367 8 6.60626 8C4.89885 8 3.33102 7.29649 1.93617 6.13411C1.45395 5.73226 1.02669 5.30255 0.657882 4.87227C0.434623 4.6118 0.278575 4.40626 0.193895 4.28276ZM1.41714 4.22148C1.75146 4.61152 2.13982 5.00211 2.57635 5.36589C3.8065 6.39101 5.16367 7 6.60626 7C8.04885 7 9.40602 6.39101 10.6362 5.36589C11.0727 5.00211 11.4611 4.61152 11.7954 4.22148C11.8647 4.14063 11.9262 4.06642 11.9797 4C11.9262 3.93358 11.8647 3.85937 11.7954 3.77852C11.4611 3.38848 11.0727 2.99789 10.6362 2.63411C9.40602 1.60899 8.04885 1 6.60626 1C5.16367 1 3.8065 1.60899 2.57635 2.63411C2.13982 2.99789 1.75146 3.38848 1.41714 3.77852C1.34784 3.85937 1.28634 3.93358 1.23286 4C1.28634 4.06642 1.34784 4.14063 1.41714 4.22148ZM6.60626 6.16667C5.28078 6.16667 4.20626 5.122 4.20626 3.83333C4.20626 2.54467 5.28078 1.5 6.60626 1.5C7.93174 1.5 9.00626 2.54467 9.00626 3.83333C9.00626 5.122 7.93174 6.16667 6.60626 6.16667Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="drag-drop__wrapper">
+          <div class="drag-drop__progress"></div>
+        </div>
+      </div>
+    </li>
+    <li class="drag-drop__item">
+      <div class="drag-drop__upload drag-drop__upload_eror">
+        <div class="drag-drop__file">
+          <svg
+            class="drag-drop__icon drag-drop__icon_file"
+            width="24"
+            height="32"
+            viewBox="0 0 24 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 5C0.5 2.51472 2.51472 0.5 5 0.5H15.3112L18.892 3.65312L18.8926 3.65371L23.5 7.7254V27C23.5 29.4853 21.4853 31.5 19 31.5H5C2.51472 31.5 0.5 29.4853 0.5 27V5Z"
+              fill="white"
+              stroke="#E0E0E0"
+            />
+          </svg>
+          <div class="flex flex_column">
+            <h2 class="drag-drop__file-name">File Name.jpg</h2>
+            <span class="drag-drop__text drag-drop__text_uploads"
+              >23 mins ago</span
+            >
+          </div>
+          <div class="flex flex_between">
+            <span class="drag-drop__text drag-drop__text_eror">Failed</span>
+            <button class="drag-drop__button-files">
+              <svg
+                class="drag-drop__icon"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.21924 4.42553H10.6398V1.005"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.3806 4.42565C10.0441 3.47275 9.40062 2.65861 8.55122 2.11107C7.70183 1.56354 6.69463 1.31363 5.6878 1.40059C4.68098 1.48754 3.73154 1.90644 2.9886 2.59149C2.24566 3.27655 1.75129 4.18896 1.58312 5.18545C1.41496 6.18194 1.58253 7.20606 2.05951 8.09698C2.5365 8.98791 3.29588 9.69518 4.21842 10.1077C5.14095 10.5203 6.17438 10.6147 7.15642 10.3763C8.13846 10.1378 9.01348 9.57992 9.64408 8.79023"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="drag-drop__wrapper">
+          <div class="drag-drop__progress"></div>
+        </div>
+      </div>
+    </li>
+    <li class="drag-drop__item">
+      <div class="drag-drop__upload drag-drop__upload_canseled">
+        <div class="drag-drop__file">
+          <svg
+            class="drag-drop__icon drag-drop__icon_file"
+            width="24"
+            height="32"
+            viewBox="0 0 24 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 5C0.5 2.51472 2.51472 0.5 5 0.5H15.3112L18.892 3.65312L18.8926 3.65371L23.5 7.7254V27C23.5 29.4853 21.4853 31.5 19 31.5H5C2.51472 31.5 0.5 29.4853 0.5 27V5Z"
+              fill="white"
+              stroke="#E0E0E0"
+            />
+          </svg>
+          <div class="flex flex_column">
+            <h2 class="drag-drop__file-name">File Name.jpg</h2>
+            <span class="drag-drop__text drag-drop__text_uploads"
+              >23 mins ago</span
+            >
+          </div>
+          <div class="flex flex_between">
+            <span class="drag-drop__text drag-drop__text_canseled"
+              >Canseled</span
+            >
+            <button class="drag-drop__button-files">
+              <svg
+                class="drag-drop__icon"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.21924 4.42553H10.6398V1.005"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10.3806 4.42565C10.0441 3.47275 9.40062 2.65861 8.55122 2.11107C7.70183 1.56354 6.69463 1.31363 5.6878 1.40059C4.68098 1.48754 3.73154 1.90644 2.9886 2.59149C2.24566 3.27655 1.75129 4.18896 1.58312 5.18545C1.41496 6.18194 1.58253 7.20606 2.05951 8.09698C2.5365 8.98791 3.29588 9.69518 4.21842 10.1077C5.14095 10.5203 6.17438 10.6147 7.15642 10.3763C8.13846 10.1378 9.01348 9.57992 9.64408 8.79023"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="drag-drop__wrapper">
+          <div class="drag-drop__progress"></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="drag-drop drag-drop_done">
+  <div class="drag-drop__box">
+    <svg
+      class="drag-drop__icon-done"
+      width="103"
+      height="103"
+      viewBox="0 0 103 103"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="51.5"
+        cy="51.5"
+        r="48.5"
+        fill="#00D200"
+        stroke="#00D200"
+        stroke-width="5"
+      />
+      <path
+        d="M29 54L45 68L75 35"
+        stroke="white"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <h1 class="drag-drop__title">Upload Complete!</h1>
+    <label class="label-drag-drop drag-drop__button" for="four">
+      Upload New
+      <input class="drag-drop-input" id="four" type="file" />
+    </label>
+  </div>
+</div>

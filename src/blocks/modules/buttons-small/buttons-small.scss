@@ -1,0 +1,138 @@
+.button-small {
+  width: fit-content;
+  padding-bottom: 73px;
+  @include font(13px, 500, 16px, $white);
+
+  @media (max-width: 1220px) {
+    margin: 0 auto;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 26px;
+
+    @media (max-width: 780px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__button {
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: inherit;
+    background-color: $blue;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    @include trans(color, background-color, border);
+
+    &::after {
+      display: none;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      mask-size: contain;
+      -webkit-mask-size: contain;
+      mask-image: url(../img/svg/download.svg);
+      -webkit-mask-image: url(../img/svg/download.svg);
+      @include center();
+      @include trans(background-color);
+    }
+
+    &_common {
+      &:hover {
+        color: $blue;
+        background-color: transparent;
+        border: 1px solid $blue;
+
+        &::after {
+          background-color: $blue;
+        }
+      }
+    }
+
+    &_left {
+      padding: 9px 11px 11px 42px;
+
+      &::after {
+        left: 10px;
+      }
+    }
+
+    &_right {
+      padding: 10px 41px 10px 12px;
+
+      &::after {
+        right: 12px;
+      }
+    }
+
+    &_icon {
+      &::after {
+        display: block;
+      }
+    }
+
+    &_hover {
+      color: $blue;
+      background-color: transparent;
+      border: 1px solid $blue;
+
+      &::after {
+        background-color: $blue;
+      }
+    }
+
+    &:active,
+    &_active {
+      color: $black;
+      background-color: $white;
+      border: 1px solid $lightgrey;
+
+      &::after {
+        background-color: $black;
+      }
+    }
+
+    &:disabled {
+      color: $brown;
+      background-color: rgba(224, 224, 224, 0.3);
+      border: 1px solid $white;
+      cursor: not-allowed;
+
+      &::after {
+        background-color: $brown;
+      }
+    }
+
+    &_red {
+      background-color: $red;
+      &:hover {
+        color: $red;
+        background-color: transparent;
+        border: 1px solid $red;
+
+        &::after {
+          background-color: $red;
+        }
+      }
+
+      &:active {
+        color: $black;
+        background-color: $white;
+        border: 1px solid $lightgrey;
+
+        &::after {
+          background-color: $black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+.search-tab {
+  $root: &;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (max-width: 1220px) {
+    padding: 0 60px 0 60px;
+    width: auto;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 20px 0 20px;
+  }
+
+  tr,
+  thead,
+  tbody {
+    margin: 0;
+    padding: 0;
+  }
+
+  & th:first-child,
+  & td:first-child {
+    padding-right: 44px;
+
+    @media (max-width: 700px) {
+      padding-right: 25px;
+    }
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+  td {
+    @media (max-width: 700px) {
+      display: block;
+      text-align: right;
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        @include font(16px, 600, 13px, $black);
+      }
+    }
+  }
+
+  &__tbody tr {
+    &:hover {
+      background-color: $lightyellow;
+    }
+
+    @media (max-width: 700px) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__box {
+    margin-bottom: 24px;
+    @include flex(space-between, center);
+
+    @media (max-width: 700px) {
+      justify-content: end;
+    }
+  }
+
+  &__input-box {
+    position: relative;
+  }
+
+  &__search {
+    border: 1px solid $lightgrey;
+    box-sizing: border-box;
+    width: 260px;
+    height: 38px;
+    border-radius: 5px;
+    padding: 11px 37px;
+
+    &::placeholder {
+      outline-offset: 0;
+      @include font(13px, 400, 16px, $brown);
+    }
+
+    &:focus::placeholder {
+      font-size: 0;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $black;
+      @include trans(border);
+
+      & + #{$root}__button #{$root}__svg path {
+        fill: $black;
+        stroke: $black;
+        @include trans(stroke, fill);
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 11px;
+    left: 0;
+  }
+
+  &__wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    min-width: 310px;
+    box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+  }
+
+  &__thead {
+    background-color: #f6f6f6;
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+
+  &__name-checkbox {
+    position: relative;
+  }
+
+  &__line {
+    height: 48px;
+    border: 1px solid $lightgrey;
+    cursor: pointer;
+    @include trans(background-color);
+
+    @media (max-width: 700px) {
+      display: block;
+      margin-bottom: 10px;
+      height: auto;
+
+      & td {
+        padding: 25px 25px 25px 50px;
+        border-bottom: 1px solid $lightgrey;
+      }
+
+      & td:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  & &__thead #{$root}__line th:first-child {
+    padding-left: 44px;
+  }
+
+  &__name,
+  &__activity,
+  &__location {
+    @include font(13px, 400, 13px, $brown);
+  }
+
+  &__activity {
+    position: relative;
+    &::after {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background-color: $lightgrey;
+      border-radius: 50%;
+      box-shadow: -6px 0px 0px 0px $lightgrey, -12px 0px 0px 0px $lightgrey;
+      @include tr(0, -50%, 50%, 90%);
+    }
+
+    @media (max-width: 700px) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__name,
+  &__location {
+    color: $black;
+  }
+
+  &__name {
+    position: relative;
+    padding-left: 44px;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$root}__checkbox {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  & .checkbox {
+    @include tr(0, -50%, 50%, 17px);
+  }
+
+  &__icon {
+    position: relative;
+    width: 100%;
+  }
+
+  &__icon path {
+    position: absolute;
+  }
+}
+
+.checkbox_reset {
+  svg {
+    display: none;
+  }
+
+  label {
+    position: relative;
+  }
+
+  label::after {
+    content: "";
+    width: 8px;
+    height: 2px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 6px;
+    @include center();
+  }
+
+  input:checked + label::after {
+    background-color: $white !important;
+  }
+
+  input {
+    pointer-events: none;
+  }
+}

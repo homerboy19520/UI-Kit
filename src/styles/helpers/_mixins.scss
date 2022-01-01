@@ -1,0 +1,47 @@
+@mixin font(
+  $font-size: 14px,
+  $font-weight: 400,
+  $line-height: 17px,
+  $color: $black
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin trans($property...) {
+  transition-property: $property;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+}
+
+@mixin center() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin flex($justify-content, $center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $center;
+}
+
+@mixin tr(
+  $translateX: 0,
+  $translateY: 0,
+  $top: 0,
+  $left: 0,
+  $position: absolute,
+  $rotate: 0
+) {
+  position: $position;
+  top: $top;
+  transform: translate($translateX, $translateY) rotate($rotate);
+  left: $left;
+}
+
+// Вызов миксина
+// @include font(14px, 400, $black)

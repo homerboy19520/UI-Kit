@@ -1,0 +1,46 @@
+.breadcrumbs {
+  $root: &;
+  width: fit-content;
+  padding-bottom: 86px;
+  gap: 25px;
+  @include flex(center, flex-start, column);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    @include flex(space-between, center);
+  }
+
+  &__item {
+    padding-right: 10px;
+    cursor: pointer;
+
+    &:last-child,
+    &:last-child a {
+      padding-right: 0;
+    }
+  }
+
+  &__icon path {
+    @include trans(stroke);
+  }
+
+  &__link {
+    padding-right: 10px;
+    @include font(14px, 500, 17px, $black);
+    @include trans(color);
+
+    &:hover {
+      color: $blue;
+
+      & + #{$root}__icon path {
+        stroke: $lightgrey;
+      }
+    }
+    &:last-child {
+      color: $lightgrey;
+    }
+  }
+}

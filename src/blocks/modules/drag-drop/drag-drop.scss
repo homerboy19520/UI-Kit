@@ -1,0 +1,359 @@
+.drag-drop {
+  $root: &;
+  width: 273px;
+  height: 281px;
+  padding-top: 49px;
+  box-sizing: border-box;
+  border: 1px dashed $lightgrey;
+  border-radius: 5px;
+  background-color: $white;
+  cursor: pointer;
+
+  &__box {
+    @include flex(center, center, column);
+  }
+
+  &__icon {
+    padding-bottom: 13px;
+  }
+
+  &__title {
+    text-align: center;
+    @include font(21px, 500, 26px);
+    padding-bottom: 8px;
+  }
+
+  #count {
+    text-align: center;
+    @include font(33px, 700, 40px, $black);
+  }
+
+  &__text {
+    @include font(13px, 400, 16px, $brown);
+
+    &_eror,
+    &_canseled {
+      @include flex(center, center);
+      @include font(11px, 500, 13px, $red);
+      padding-right: 8px;
+      margin-top: 5px;
+    }
+
+    &_canseled {
+      color: #ababab;
+    }
+
+    &_active {
+      animation-name: downloadText;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__text-upload {
+    @include font(13px, 400, 16px, $brown);
+    padding-bottom: 24px;
+
+    &_active {
+      animation-name: downloadText;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    &_uploads {
+      @include font(11px, 500, 13px, $brown);
+      text-align: left;
+    }
+
+    @keyframes downloadText {
+      0% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+
+      75% {
+        opacity: 0;
+      }
+
+      100% {
+        width: 1;
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: $black;
+    background-color: $white;
+    padding: 10px 24px;
+    border-radius: 5px;
+    border: 1px solid $lightgrey;
+    @include font(13px, 500, 16px);
+    @include trans(color, background-color, border, box-shadow);
+
+    &:hover {
+      box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+      border-color: $grey;
+    }
+
+    &_uploads {
+      padding: 10px 41px 10px 12px;
+      @include font(13px, 500, 16px);
+    }
+  }
+
+  &__button-files {
+    border-radius: 5px;
+    border: 1px solid $lightgrey;
+    cursor: pointer;
+    position: relative;
+    min-width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: $lightgrey;
+    @include flex(center, center);
+    border: none;
+    right: 0;
+    top: 0;
+    line-height: 0;
+  }
+
+  &_wrong {
+    background-color: #fff5f4;
+    border-color: $red;
+
+    & svg path {
+      stroke: $lightred;
+    }
+
+    & #{$root}__title {
+      color: $red;
+    }
+  }
+
+  &_download {
+    padding-top: 89px;
+    & #{$root}__title {
+      padding-bottom: 16px;
+    }
+
+    & #{$root}__text {
+      padding-bottom: 34px;
+    }
+
+    & #{$root}__button:active + & #{$root}__loader {
+      display: none;
+    }
+  }
+
+  &_upload {
+    padding-top: 34.5px;
+    & #{$root}__title {
+      position: absolute;
+      @include tr(-50%, -40%, 50%, 50%);
+      padding-bottom: 14px;
+      @include font(33px, 700, 40px);
+    }
+
+    & #{$root}__text {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__loader,
+  &__loader-uploads {
+    position: relative;
+    width: 183px;
+    height: 6px;
+    margin-bottom: 19px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+    background-color: $lightgrey;
+
+    &_active {
+      &::after {
+        animation-name: download;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+
+      @keyframes download {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+    }
+
+    &_done {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    content: "";
+    width: 112px;
+    height: 112px;
+    box-sizing: border-box;
+    border: 5px solid $lightgrey;
+    border-radius: 50%;
+    margin-bottom: 18.5px;
+  }
+
+  &__svg {
+    width: 119px;
+    height: 119px;
+
+    &_active {
+      stroke: $blue;
+    }
+
+    &_done {
+      stroke-dashoffset: 0;
+      stroke: $blue;
+    }
+  }
+
+  &_done {
+    #{$root}__icon-done {
+      padding-bottom: 26px;
+    }
+    #{$root}__title {
+      padding-bottom: 24px;
+      @include font(15px, 600, 18px);
+    }
+  }
+
+  &__container {
+    @include flex(space-between, center);
+    padding: 13px 10px 13px 18px;
+  }
+
+  &__title_uploads {
+    padding: 0;
+    @include font(16px, 600, 20px);
+  }
+
+  &__list {
+    padding: 0 20px 0 20px;
+    @include flex(space-between, center, column);
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__progress,
+  &__loader-progress {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background-color: $blue;
+    border-radius: 10px;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: $lightgrey;
+  }
+
+  &__upload {
+    &_done {
+      #{$root}__progress {
+        width: 100%;
+        background-color: $green;
+      }
+    }
+
+    &_eror {
+      #{$root}__progress {
+        width: 100%;
+        background-color: $red;
+      }
+      #{$root}__button-files {
+        background-color: $red;
+      }
+    }
+
+    &_canseled {
+      #{$root}__progress {
+        width: 100%;
+        background-color: #ffd422;
+      }
+    }
+  }
+
+  &__file {
+    position: relative;
+    padding: 0 0 10px 34px;
+    @include flex(space-between, center);
+  }
+
+  &__icon_file {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__file-name {
+    @include font(13px, 500, 16px);
+  }
+
+  &_uploads {
+    height: auto;
+    border: none;
+    padding-top: 0;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.12);
+
+    #{$root}__svg-uploads {
+      padding-right: 12px;
+      right: 0;
+      @include center();
+    }
+
+    #{$root}__icon {
+      padding: 0;
+    }
+  }
+
+  &__circle {
+    stroke-dashoffset: 314;
+
+    &_done {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+.drag-drop-input {
+  display: none;
+}
+
+.drag-drop-label {
+  width: 273px;
+  height: 281px;
+}

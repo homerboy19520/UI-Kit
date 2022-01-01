@@ -1,0 +1,70 @@
+.pagination {
+  $root: &;
+  padding-bottom: 31px;
+  width: fit-content;
+  gap: 45px;
+  @include flex(space-between, center);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    @include flex(space-between, center);
+    width: fit-content;
+  }
+
+  &__item {
+    width: fit-content;
+
+    &:first-child {
+      padding-right: 5px;
+    }
+
+    &:last-child {
+      padding-left: 5px;
+    }
+  }
+
+  &__button {
+    background-color: $grey;
+    cursor: pointer;
+    padding: 11px 14px;
+    border-width: 0;
+    border-radius: 5px;
+    @include flex(center, center);
+    @include trans(fill, background-color);
+    #{$root}__svg path {
+      fill: $brown;
+    }
+
+    &:hover {
+      background-color: $blue;
+
+      #{$root}__svg path {
+        fill: $white;
+      }
+    }
+
+    #{$root}__svg path {
+      fill: $brown;
+    }
+
+    &_second {
+      transform: rotate(180deg);
+    }
+
+    &_round {
+      border-radius: 50%;
+    }
+  }
+
+  &__list-links,
+  &__item-links {
+    @include flex(center, center);
+  }
+  &__link {
+    padding: 0 8px 0 8px;
+    @include font(14px, 500, 17px, $blue);
+  }
+}

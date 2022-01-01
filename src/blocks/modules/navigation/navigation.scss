@@ -1,0 +1,146 @@
+.navigation {
+  $root: &;
+  width: fit-content;
+  padding-bottom: 50px;
+  @include flex(center, center, column);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    width: fit-content;
+    gap: 16px;
+    padding-bottom: 35px;
+    @include flex(space-between, center);
+
+    &_wizzard {
+      overflow: hidden;
+      gap: 0;
+      padding-bottom: 0;
+
+      & #{$root}__item::after,
+      & #{$root}__item::before {
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    width: fit-content;
+    @include flex(space-between, center);
+
+    &::after,
+    &::before {
+      content: "";
+      display: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: 0;
+      border-left: 8px solid #e8f5ff;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      transform: translate(-2px, 0);
+    }
+
+    &::before {
+      border-left: 8px solid $white;
+      transform: translate(0, 0);
+    }
+
+    &_wizzard {
+      position: relative;
+      justify-content: center;
+      padding: 6px 33px 6px 21px;
+      background-color: #e8f5ff;
+
+      &:last-child::after,
+      &:last-child::before {
+        display: none;
+      }
+
+      &:first-child {
+        border-top-left-radius: 22px;
+        border-bottom-left-radius: 22px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 22px;
+
+        &::before,
+        &::after {
+          border-color: #e8f5ff;
+        }
+      }
+    }
+
+    &_active {
+      background-color: $blue;
+
+      &::after {
+        border-left: 8px solid $blue;
+      }
+
+      &::before {
+        background-color: #e8f5ff;
+      }
+
+      #{$root}__text {
+        color: $white;
+      }
+    }
+
+    &_short .choices {
+      width: 67px;
+    }
+  }
+
+  &__items {
+    min-width: 38px;
+  }
+
+  &__text {
+    @include font(13px, 500, 16px, $blue);
+  }
+
+  &__button {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    padding: 12px 14px 12px 46px;
+    border-radius: 5px;
+    background-color: $grey;
+    @include trans(background-color, color);
+    @include font(13px, 500, 13px, $brown);
+
+    &:hover {
+      color: $blue;
+      background-color: rgba(24, 160, 251, 0.1);
+
+      #{$root}__svg path {
+        fill: $blue;
+      }
+    }
+  }
+
+  &__svg {
+    padding-left: 23px;
+    @include tr(0, 1px, auto, 0, absolute);
+
+    &_second {
+      @include tr(0, 1px, auto, 0, absolute, 180deg);
+      padding-left: 0;
+      padding-right: 23px;
+    }
+  }
+
+  &__svg path {
+    @include trans(fill);
+  }
+
+  & .choices .is_open .choices__inner {
+    display: none;
+  }
+}

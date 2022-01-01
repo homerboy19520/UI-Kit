@@ -1,0 +1,77 @@
+.wizzard {
+  $root: &;
+  padding-bottom: 100px;
+  width: 296px;
+  @include flex(space-between, center, column);
+  @include font(13px, 500, 16px, $black);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    position: relative;
+    display: grid;
+    background-color: $lightgrey;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 3px;
+    width: 256px;
+  }
+
+  &__item {
+    position: relative;
+    &::after {
+      content: "";
+      background-color: $lightgrey;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      @include tr(-50%, -50%, 50%, 50%);
+    }
+
+    &::before {
+      content: "Step 2";
+      color: $lightgrey;
+      @include tr(-50%, 100%, 50%, 50%, absolute);
+    }
+
+    &:first-child {
+      &::after {
+        left: 0;
+        margin-right: 0;
+      }
+
+      &::before {
+        content: "Step 1";
+        left: 0;
+        transform: translate(-50%, 100%);
+      }
+    }
+
+    &:last-child {
+      &::after {
+        margin-right: 0;
+        left: 100%;
+      }
+
+      &::before {
+        content: "Step 3";
+        right: 0;
+        transform: translate(50%, 100%);
+        left: auto;
+      }
+    }
+
+    &_active {
+      background-color: $blue;
+
+      &::after {
+        background-color: $blue;
+      }
+
+      &::before {
+        color: $black;
+      }
+    }
+  }
+}

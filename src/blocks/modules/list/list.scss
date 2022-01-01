@@ -1,0 +1,63 @@
+.list {
+  $root: &;
+  counter-reset: section;
+  width: fit-content;
+  padding-bottom: 30px;
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    @include flex(space-between, center);
+  }
+
+  &__button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7px 9px;
+    border: none;
+    @include flex(center, center);
+
+    #{$root}__svg path {
+      fill: $blue;
+    }
+
+    &_disable {
+      #{$root}__svg path {
+        fill: $brown;
+      }
+    }
+
+    &_second {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__nav,
+  &__item {
+    @include flex(center, center);
+  }
+
+  &__item {
+    &_active {
+      #{$root}__link {
+        color: $blue;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 18px 10px 18px;
+    @include font(14px, 500, 17px, $brown);
+
+    &::after {
+      content: "";
+      counter-increment: section;
+      content: counter(section);
+      @include tr(-50%, -50%, 50%, 50%, absolute);
+    }
+  }
+}

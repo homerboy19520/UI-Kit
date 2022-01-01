@@ -1,0 +1,59 @@
+.size-buttons {
+  $root: &;
+  width: fit-content;
+  @include flex(space-between, flex-start);
+
+  @media (max-width: 1220px) {
+    margin: 0 auto;
+  }
+
+  &__item {
+    &:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    &:first-child #{$root}__label,
+    &:last-child #{$root}__label {
+      border-width: 1px;
+    }
+  }
+
+  &__label {
+    padding: 14px 48px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-size: 15px;
+    line-height: 18px;
+    border-color: $lightgrey;
+    border-color: $lightgrey;
+    @include font(15px, 500, 18px, $black);
+    @include flex(center, center);
+
+    &_first {
+      border-radius: 10px 0 0 10px;
+      border-right-color: transparent;
+    }
+
+    &_third {
+      border-radius: 0 10px 10px 0;
+      border-left-color: transparent;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$root}__label {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+  }
+}

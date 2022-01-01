@@ -1,0 +1,80 @@
+.modal {
+  $root: &;
+  @include flex(center, center);
+  padding: 81px 172px;
+  background-color: #6b6b6b;
+
+  &__window {
+    position: relative;
+    min-width: 300px;
+    padding: 16px 16px;
+    border-radius: 4px;
+    background-color: $white;
+  }
+
+  &__title,
+  &__text {
+    padding-bottom: 10px;
+    @include font(13px, 700, 16px);
+  }
+
+  &__text {
+    max-width: 281px;
+    padding-bottom: 24px;
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  &__box {
+    @include flex(flex-end, center);
+  }
+
+  &__button {
+    padding: 9.5px 13.5px 9.5px 13.5px;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    line-height: 0;
+    background-color: $blue;
+    cursor: pointer;
+    @include trans(background-color, border-color);
+
+    &:hover {
+      background-color: transparent;
+      border-color: $lightgrey;
+
+      #{$root}__button-text {
+        color: $black;
+      }
+    }
+
+    &:first-child {
+      margin-right: 4px;
+    }
+
+    &_close {
+      position: absolute;
+      margin: 17px 17px 0 0;
+      top: 0;
+      right: 0;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        #{$root}__icon path {
+          fill: $black;
+          @include trans(fill);
+        }
+      }
+    }
+
+    &_submit {
+      padding: 9.5px 24px;
+    }
+  }
+
+  &__button-text {
+    @include trans(color);
+    @include font(13px, 500, 16px, $white);
+  }
+}

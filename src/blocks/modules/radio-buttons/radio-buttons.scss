@@ -1,0 +1,57 @@
+.radio-buttons {
+  $root: &;
+  width: fit-content;
+  padding-bottom: 24px;
+  @include flex(space-between, center);
+
+  @media (max-width: 1220px) {
+    margin: 0 auto;
+  }
+
+  &__item {
+    &:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    &:first-child #{$root}__label {
+      border-width: 1px;
+    }
+
+    &:last-child #{$root}__label {
+      border-left-width: 0;
+    }
+  }
+
+  &__label {
+    width: 56px;
+    height: 48px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: inherit;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: $lightgrey;
+    @include flex(center, center);
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$root}__label {
+      background-color: $blue;
+      border-color: $blue;
+    }
+
+    &:checked + #{$root}__label #{$root}__icon_stroke path {
+      stroke: $white;
+    }
+
+    &:checked + #{$root}__label #{$root}__icon_fill path {
+      fill: $white;
+    }
+  }
+}

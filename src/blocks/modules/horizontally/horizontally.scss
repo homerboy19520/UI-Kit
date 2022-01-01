@@ -1,0 +1,58 @@
+.horizontally {
+  $root: &;
+  @include flex(space-between, center, column);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+
+  @media (max-width: 460px) {
+    display: none;
+  }
+
+  &__list-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 3px;
+    width: 402px;
+    background-color: $lightgrey;
+  }
+
+  &__item {
+    position: relative;
+    &::after,
+    &::before {
+      content: "";
+      background-color: $lightgrey;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      @include tr(-50%, -50%, 50%, 100%, absolute);
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &_active {
+      background-color: $blue;
+
+      &::after {
+        background-color: $white;
+        border: 3px solid $blue;
+        height: 12px;
+        width: 12px;
+        z-index: 1;
+      }
+
+      &::before {
+        background-color: $blue;
+        background-image: url("../img/svg/check.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.alert {
+  $root: &;
+  margin: 0 auto;
+  width: fit-content;
+  @media (max-width: 715px) {
+    padding: 0 60px 0 60px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+
+  &__container {
+    gap: 20px;
+    width: 656px;
+    @include flex(space-between, center, column);
+
+    @media (max-width: 715px) {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    gap: 30px;
+    @include flex(space-between, center);
+
+    @media (max-width: 715px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__modal {
+    position: relative;
+    background-color: $blue;
+    border: none;
+    padding: 13px 9px 13px 13px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 10px 23px 0px #0000001f;
+    @include trans(background-color);
+
+    &:hover,
+    &_hover {
+      background-color: $white;
+      color: $black;
+      #{$root}__svg path:first-child {
+        fill: $lightgrey;
+      }
+      #{$root}__svg path:last-child {
+        fill: $white;
+      }
+      & h1 {
+        color: $black;
+      }
+
+      & p {
+        color: $brown;
+      }
+    }
+  }
+
+  &__title,
+  &__text {
+    max-width: 80%;
+    word-break: break-all;
+  }
+
+  &__red {
+    position: relative;
+    @include flex(space-between, initial);
+    background-color: $red;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 10px 23px 0px #0000001f;
+    @include font(13px, 400, 16px);
+    @include trans(background-color);
+    p {
+      color: $white;
+    }
+    #{$root}__button,
+    #{$root}__icon {
+      order: -1;
+      padding: 13px 8px 0 9px;
+    }
+
+    &:hover,
+    &_hover {
+      background-color: $white;
+      #{$root}__svg path:first-child {
+        fill: red;
+      }
+      #{$root}__svg path:last-child {
+        fill: $white;
+      }
+
+      & p {
+        color: $black;
+      }
+
+      & h1 {
+        color: $black;
+      }
+
+      #{$root}__button-red {
+        background-color: $white;
+      }
+
+      #{$root}__button-red p {
+        color: $black;
+      }
+
+      #{$root}__button-red:last-child,
+      #{$root}__button-wrapper {
+        border-color: $lightgrey;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    word-break: break-all;
+  }
+
+  &__title,
+  &__text {
+    max-width: 90%;
+    min-width: 128px;
+    word-break: break-all;
+    @include font(13px, 400, 16px, $white);
+  }
+
+  &__title {
+    text-align: left;
+    font-weight: 700;
+  }
+
+  &__text {
+    padding-top: 10px;
+  }
+
+  &__svg {
+    padding: 0;
+  }
+
+  &__button,
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 9px 9px 0 0;
+    padding: 0;
+    list-style: none;
+    border: transparent 0 solid;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__icon {
+    right: inherit;
+    left: 0;
+  }
+
+  &__button-red {
+    background-color: $red;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 0;
+    align-self: unset;
+    height: 100%;
+    min-width: 89px;
+    @include trans(background-color, border-color);
+
+    &:first-child {
+      border-top-right-radius: 5px;
+    }
+
+    &:last-child {
+      border-top: 1px solid $lightred;
+      border-bottom-right-radius: 5px;
+
+      p {
+        font-weight: 400;
+      }
+    }
+
+    & p {
+      text-align: center;
+      @include font(13px, 700, 16px, $white);
+    }
+  }
+
+  &__box,
+  &__button-wrapper {
+    @include flex(space-between, center);
+  }
+
+  &__box {
+    padding: 15px 0 13px 41px;
+    max-width: 400px;
+  }
+
+  &__button-wrapper {
+    flex-direction: column;
+    border-left: 1px solid $lightred;
+    @include trans(border-color);
+  }
+}

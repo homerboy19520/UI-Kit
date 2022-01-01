@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>gulp-scss-starter</title>
+    <meta name="theme-color" content="#fff" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      sizes="16x16"
+      href="img/favicons/favicon-16x16.png"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="img/favicons/favicon-32x32.png"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="img/favicons/apple-touch-icon-precomposed.png"
+    />
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="img/favicons/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="img/favicons/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="img/favicons/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="img/favicons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="img/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/favicons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="img/favicons/apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/favicons/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="1024x1024"
+      href="img/favicons/apple-touch-icon-1024x1024.png"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="wrapper">
+        <div class="grid grid_buttons">
+          <div class="flex flex_between flex_column">
+            <h1 class="title">Buttons Big</h1>
+            @@include("../blocks/modules/buttons-big/buttons-big.html")
+            <h1 class="title">Buttons Small</h1>
+            @@include("../blocks/modules/buttons-small/buttons-small.html")
+            @@include("../blocks/modules/tags/tags.html")
+          </div>
+          <div class="flex flex_start flex_column">
+            <h1 class="title">Tags</h1>
+            @@include("../blocks/modules/radio-buttons/radio-buttons.html")
+            @@include("../blocks/modules/tab-buttons/tab-buttons.html")
+            @@include("../blocks/modules/size-buttons/size-buttons.html")
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="grid grid_navigation">
+          <div class="flex flex_start flex_column">
+            <h1 class="title title_tabs">Tabs & Icons</h1>
+            @@include("../blocks/modules/tabs/tabs.html")
+            <h1 class="title title_tabs">Breadcrumbs</h1>
+            @@include("../blocks/modules/breadcrumbs/breadcrumbs.html")
+            <h1 class="title title_tabs">Wizzard Navigations</h1>
+            @@include("../blocks/modules/wizzard/wizzard.html")
+            @@include("../blocks/modules/horizontally/horizontally.html")
+          </div>
+          <div class="flex flex_end flex_column">
+            @@include("../blocks/modules/vertically/vertically.html")
+          </div>
+          <div class="flex flex_start flex_column">
+            <h1 class="title title_tabs">Tabs & Icons</h1>
+            @@include("../blocks/modules/tabs-icons/tabs-icons.html")
+            <h1 class="title title_tabs">Pagination</h1>
+            @@include("../blocks/modules/pagination/pagination.html")
+            @@include("../blocks/modules/list/list.html")
+            @@include("../blocks/modules/navigation/navigation.html")
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        @@include("../blocks/modules/tables/tables.html")
+      </div>
+      <div class="wrapper">
+        @@include("../blocks/modules/search-tab/search-tab.html")
+      </div>
+      <div class="wrapper">@@include("../blocks/modules/alert/alert.html")</div>
+      <div class="wrapper">@@include("../blocks/modules/modal/modal.html")</div>
+      <div class="wrapper">
+        <div class="grid grid_gap">
+          @@include("../blocks/modules/input/input.html")
+          <div class="grid grid_input">
+            @@include("../blocks/modules/checkbox-styles/checkbox-styles.html")
+            @@include("../blocks/modules/option/option.html")
+            @@include("../blocks/modules/range/range.html")
+          </div>
+        </div>
+      </div>
+      <div class="wrapper wrapper_drag-drop">
+        <div class="grid grid_drag-drop">
+          @@include("../blocks/modules/drag-drop/drag-drop.html")
+        </div>
+      </div>
+      <script src="js/main.js"></script>
+      <script src="js/vendor.js"></script>
+    </div>
+  </body>
+</html>

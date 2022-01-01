@@ -1,0 +1,76 @@
+.tabs {
+  $root: &;
+  gap: 25px;
+  padding-bottom: 79px;
+  @include flex(center, flex-start, column);
+
+  @media (max-width: 950px) {
+    margin: 0 auto;
+  }
+
+  &__list {
+    @include flex(space-between, center);
+  }
+
+  &__item {
+    &_shell {
+      border-bottom: 1px solid $lightgrey;
+    }
+  }
+
+  &__input {
+    display: none;
+    &:checked + #{$root}__label {
+      color: $blue;
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:checked + #{$root}__label #{$root}__svg path {
+      fill: $blue;
+    }
+
+    &:checked + #{$root}__label #{$root}__svg #{$root}__fill,
+    &:checked + #{$root}__label #{$root}__svg_stroke path {
+      stroke: $blue;
+    }
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 6px;
+    @include trans(color);
+    @include font(14px, 500, 17px, $black);
+    @include flex(center, center);
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $blue;
+      width: 100%;
+      height: 2px;
+      transform: translate(0, 19px);
+      opacity: 0;
+      @include trans(opacity);
+    }
+  }
+
+  &__svg {
+    display: block;
+    order: -1;
+  }
+
+  &__svg,
+  &__svg path,
+  #{$root}__fill {
+    display: block;
+    order: -1;
+    @include trans(fill);
+  }
+
+  &__svg path {
+    @include trans(fill);
+  }
+}

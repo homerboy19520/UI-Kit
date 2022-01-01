@@ -1,0 +1,95 @@
+.option {
+  $root: &;
+  width: 260px;
+
+  @media (max-width: 1005px) {
+    justify-self: center;
+  }
+
+  @media (max-width: 701px) {
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    margin-bottom: 20px;
+  }
+
+  & .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + &__label &__checkbox::after {
+    right: calc(100% - 28px);
+    background-color: #d5d5d5;
+  }
+
+  &__input:checked + &__label &__checkbox_small::after {
+    right: calc(100% - 22px);
+  }
+
+  &__input:checked + &__label &__checkbox {
+    background-color: $white;
+    border-color: #eaeaea;
+  }
+
+  &__input:checked + &__label &__checkbox_reverse {
+    background-color: #d5d5d5;
+    border-color: #d5d5d5;
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &__label {
+    @include flex(flex-start, center);
+    gap: 10px;
+    @include font(13px, 500, 16px);
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 52px;
+    height: 32px;
+    border: 1px solid $green;
+    border-radius: 19px;
+    background-color: $green;
+    @include trans(background-color, border-color);
+
+    &::after {
+      content: "";
+      width: 26px;
+      height: 26px;
+      background-color: $white;
+      border-radius: 50%;
+      @include tr(0, -50%, 50%, inherit);
+      right: 2px;
+      @include trans(right);
+    }
+
+    &_small {
+      height: 24px;
+      &::after {
+        height: 20px;
+        width: 20px;
+        @include tr(0, -50%, 50%, inherit);
+        right: 2px;
+      }
+    }
+
+    &_disabled {
+      background-color: #d5d5d5;
+      border-color: #d5d5d5;
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+}

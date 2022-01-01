@@ -1,0 +1,265 @@
+.input {
+  $root: &;
+  @include flex(space-between, flex-start);
+  flex-wrap: wrap;
+  gap: 35px;
+
+  @media (max-width: 1220px) {
+    padding: 0 60px 0 60px;
+    gap: 35px;
+  }
+
+  @media (max-width: 1005px) {
+    justify-content: space-around;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0 10px 0 10px;
+    gap: 60px;
+  }
+
+  @media (max-width: 676px) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    @include flex(space-between, flex-start, column);
+
+    &_gap {
+      gap: 10px;
+    }
+
+    &_row {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &_column {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include font(13px, 500, 16px);
+    padding-bottom: 7px;
+
+    &_disabled {
+      color: $brown;
+    }
+  }
+
+  &__basic,
+  &__basic_error,
+  &__basic_focused,
+  &__basic_disabled,
+  &__basic_left-icon,
+  &__basic_right-icon,
+  &__basic_web,
+  &__basic_web-addres,
+  &__basic_blue {
+    box-sizing: border-box;
+    width: 260px;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid $lightgrey;
+    border-radius: 4px;
+    @include font(13px, 400, 16px);
+
+    &::placeholder {
+      padding: 0;
+      margin: 0;
+      width: fit-content;
+      @include font(13px, 400, 16px, $brown);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus::placeholder {
+      color: $black;
+      font-size: 0;
+    }
+  }
+
+  &__static {
+    pointer-events: none;
+  }
+
+  &__basic {
+    &:hover {
+      border-color: $blue;
+      background-color: transparent;
+      @include trans(background-color, border-color);
+    }
+
+    &_error {
+      border-color: $red;
+      color: $red;
+      background-color: $white;
+
+      &::placeholder {
+        color: $red;
+      }
+
+      &:focus::placeholder {
+        color: $red;
+      }
+    }
+
+    &_focused {
+      &::placeholder {
+        color: $black;
+      }
+    }
+
+    &_disabled {
+      cursor: not-allowed;
+      background-color: $grey;
+
+      &::placeholder {
+        color: $brown;
+      }
+    }
+
+    &_left-icon,
+    &_right-icon {
+      padding-left: 37px;
+      &:focus + #{$root}__icon path {
+        fill: $black;
+        stroke: $black;
+        @include trans(fill);
+      }
+    }
+
+    &_right-icon {
+      padding-right: 37px;
+      padding-left: 12px;
+    }
+
+    &_web {
+      width: 200px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+
+    &_blue {
+      border-color: $blue;
+      background-color: transparent;
+    }
+  }
+
+  &__web {
+    width: 60px;
+    height: 38px;
+    @include flex(center, center);
+    border: 1px solid $lightgrey;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: $grey;
+  }
+
+  &__text {
+    text-align: center;
+    @include font(13px, 400, 16px, $brown);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    &_left {
+      left: 13px;
+    }
+
+    &_right {
+      transform: translate(0, -50%) rotateY(180deg);
+      right: 13px;
+    }
+  }
+
+  &__box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &_web,
+    &_checkbox,
+    &_checkbox-active,
+    &__wrapper-select {
+      @include flex(space-between, center);
+    }
+
+    &_web {
+      &:hover {
+        #{$root}__web,
+        #{$root}__basic_web {
+          border-color: $blue;
+          background-color: transparent;
+          @include trans(background-color, border-color);
+        }
+      }
+    }
+
+    &_checkbox-active {
+      gap: 10px;
+    }
+  }
+
+  &__textarea {
+    min-width: 260px;
+    min-height: 97px;
+    border: 1px solid lightgrey;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+
+    &:hover {
+      @include trans(background-color, border-color);
+    }
+
+    &:focus {
+      &::placeholder {
+        font-size: 0;
+      }
+    }
+
+    &_native {
+      &:hover {
+        border-color: $blue;
+        background-color: transparent;
+      }
+    }
+
+    &_error {
+      border-color: $red;
+      background-color: #fff3f1;
+      color: $red;
+
+      &::placeholder {
+        color: $red;
+      }
+    }
+  }
+
+  &__wrapper-select {
+    width: fit-content;
+  }
+
+  & .choices__inner {
+    background-color: transparent;
+    border: 1px solid $lightgrey;
+  }
+
+  & .choices__list--single .choices__item {
+    @include font(13px, 400, 16px, $brown);
+  }
+
+  & .choices[data-type*="select-one"]::after {
+    opacity: 1;
+  }
+}

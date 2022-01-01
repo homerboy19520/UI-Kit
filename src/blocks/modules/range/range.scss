@@ -1,0 +1,36 @@
+.range {
+  @include flex(space-between, center, column);
+  width: 300px;
+  height: 334px;
+
+  @media (max-width: 1005px) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    justify-self: center;
+  }
+
+  @media (max-width: 701px) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  &__duo,
+  &__singleOption {
+    & .noUi-tooltip {
+      bottom: 150%;
+    }
+  }
+
+  &__singleOption,
+  &__duoOption {
+    & .noUi-handle {
+      width: 10px;
+      height: 10px;
+      background-color: $blue;
+      position: relative;
+      border-color: $blue;
+      left: calc(100% - 5px);
+      top: calc(0% - 4px);
+    }
+  }
+}
