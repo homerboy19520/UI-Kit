@@ -1,4 +1,4 @@
-# UI-Kit[https://homerboy19520.github.io/UI-Kit/]
+# UI-Kit
 
 
 ## :fire: Показываю опыт работы с пользовательским интерфейсом
@@ -34,4 +34,4 @@
 
 ### Страница проекта
 https://homerboy19520.github.io/UI-Kit/
-
+ [dill]: <https://github.com/joemccann/dillinger>
