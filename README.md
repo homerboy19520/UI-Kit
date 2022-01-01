@@ -34,4 +34,3 @@
 
 ### Страница проекта
 https://homerboy19520.github.io/UI-Kit/
- [dill]: <https://github.com/joemccann/dillinger>
