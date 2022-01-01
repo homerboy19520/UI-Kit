@@ -12,7 +12,6 @@
 * Работа с библиотекой для реализации календаря 
 * Работа с анимацией
 
-* используется проверка кода на ошибки перед коммитом
 ## :keyboard: Команды
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run lint:styles``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
